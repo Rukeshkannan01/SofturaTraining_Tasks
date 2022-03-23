@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Login Page</title>
+    <script type="text/javascript">
+        function LoginCheck() {
+            var uid = document.getElementById("userid").value;
+            var pwd = document.getElementById("password").value;
+            var attempt = 3;
+            var temp = 1;
+            while (temp <= attempt) {
+                if (temp == 3) {
+                    document.write("No Attempts!!!");
+                    break;
+                }
+                else {
+                    if (uid == "Intern" && pwd == "Softura!01") 
+                        alert("Login Successful");
+                    else
+                        alert("Username or Password mismatch");
+                }
+                temp++;
+            }
+        }
+         
+    </script>
+</head>
+<body>
+    <form name="loginForm" method="post" id="Logform">
+        <br />
+        <br />
+        <br />
+        <table width="20%" bgcolor="lightblue" align="center">
+
+            <tr>
+                <td colspan=2><center><font size=4><b> Login Page</b></font></center></td>
+            </tr>
+
+            <tr>
+                <td>Username:</td>
+                <td><input type="text" size=25 name="userid" id="userid" required></td>
+            </tr>
+
+            <tr>
+                <td>Password:</td>
+                <td><input type="Password" size=25 name="password" id="password" required></td>
+            </tr>
+
+            <tr>
+                <td><input type="submit" value="Login" onclick="LoginCheck()"/></td>
+                <td><input type="submit" value="Cancel"/></td>
+            </tr>
+
+        </table>
+    </form>
+
+</body>
+</html>
