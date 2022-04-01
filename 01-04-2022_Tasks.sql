@@ -82,7 +82,7 @@ select Max(TaxRate) Max_taxrate
 from Sales.SalesTaxRate
 
 -- Task 12
- create proc Task12
+ create view Task12
  as
  select edh.DepartmentID,edh.BusinessEntityID,ShiftID,BirthDate,datediff(year,BirthDate,getdate()) Age
  from HumanResources.EmployeeDepartmentHistory edh
@@ -92,15 +92,11 @@ from Sales.SalesTaxRate
  on edh.DepartmentID=dpt.DepartmentID
  go
 
- exec Task12
-
  -- Task 13
  create view Name_age
  as
  select*from Task_12
  go
-
- select*from Name_age
 
  -- Task 14
 select count(*) No_of_rows_hr
