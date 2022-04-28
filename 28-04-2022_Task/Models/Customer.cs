@@ -20,22 +20,3 @@ namespace ProductEntityFw.Models
 
 }
 
-// Product List
-/*
- ProductID int identity(2201,1),
-ProductName varchar(50),
-Price money,
-MfgDate date default getdate(),
-ExpDate date   -- dateadd(month,3,MfgDate)
-*/
-
-/*
-PurchaseDetails
-(
-BillNo int identity(1111,1),
-CustomerID int,
-ProductID int,
-Quantity int,
-TotalAmount int,
-BillDate date default getdate()
-*/
