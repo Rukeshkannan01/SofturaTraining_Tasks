@@ -1,0 +1,60 @@
+﻿@model IEnumerable<AdoMVC_03.Models.Customer>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div>
+    
+    <table class="table">
+        <thead>
+            @*<tr>
+                @using(Html.BeginForm("SearchCustomer","Home",FormMethod.Post))
+            {
+                CustomerID: <InputType="Text" name ="CustomerID"/>
+                        <InputType="submit" value ="Submit"/>
+            }
+            </tr>*@
+            <tr>
+                <td>
+                    @using (Html.BeginForm("Insert", "Home"))
+            {
+                <input type="submit" value="INSERT"/>
+            }    
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayName("ID")
+                </th>
+                <th>
+                    @Html.DisplayName("Customer Name")
+                </th>
+                <th>
+                    @Html.DisplayName("Email ID")
+                </th>
+                <th>
+                    @Html.DisplayName("Contact No")
+                </th>                
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CustomerID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmailID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ContactNo)
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

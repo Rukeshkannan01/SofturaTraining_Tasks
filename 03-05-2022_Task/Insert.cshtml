@@ -1,0 +1,53 @@
+﻿@model AdoMVC_03.Models.Customer
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = null;
+}
+<div>
+    @using (Html.BeginForm("DataInsert", "Home", FormMethod.Post))
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td>CutomerID</td>
+                    <td>@Html.TextBoxFor(inst => inst.CustomerID)</td>
+                </tr>
+                <br />
+                <br />
+                <tr>
+                    <td>Name</td>
+                    <td>@Html.TextBoxFor(inst => inst.Name)</td>
+                </tr>
+                <br />
+                <br />
+                <tr>
+                    <td>EmailID</td>
+                    <td>@Html.TextBoxFor(inst => inst.EmailID)</td>
+                </tr>
+                <br />
+                <br />
+                <tr>
+                    <td>ContactNo</td>
+                    <td>@Html.TextBoxFor(inst => inst.ContactNo)</td>
+                </tr>
+                <br />
+                <br />
+                <tr>
+                    <td>
+                        @using (Html.BeginForm("Insert", "Home"))
+                        {
+                            <input type="submit" value="SUBMIT" />
+                        }
+                    </td>
+                </tr>
+            </thead>
+        </table>
+
+    }
+
+</div>
